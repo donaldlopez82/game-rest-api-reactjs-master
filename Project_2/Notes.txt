@@ -1,0 +1,86 @@
+PROJECT 2
+
+How To Merge Master into Branch
+
+git checkout main- switches to the main branch
+git pull- pulls any main branch changes
+git checkout branchname- switches to the branch
+git merge main- merges main changes to your branch
+git push- pushes branch changes
+
+
+
+POSTGRES BACKEND
+
+1. do npm install (on the postgressbackend folder/ terminal)
+2. change the password in dbconnections to your postgress password
+
+3. open QueryTool in pgAdmin and enter these queries
+
+
+
+CREATE DATABASE projecttwo;
+
+
+CREATE TABLE users
+    (
+        id bigserial NOT NULL,
+        email character varying,
+        password character varying,
+        PRIMARY KEY ("id")
+    );
+
+
+CREATE TABLE public.userdetails
+    (
+        id bigserial NOT NULL,
+        email character varying ,
+        password character varying,
+        firstname character varying,
+        lastname character varying,
+        savepoint bigint,
+        PRIMARY KEY (id)
+        
+    );
+
+CREATE TABLE IF NOT EXISTS public.commentssection
+(
+    id bigserial NOT NULL,
+    alias character varying COLLATE pg_catalog."default",
+    comment character varying COLLATE pg_catalog."default",
+    adminreply character varying COLLATE pg_catalog."default",
+    admin character varying COLLATE pg_catalog."default",
+    "time" character varying COLLATE pg_catalog."default",
+    CONSTRAINT comments_pkey PRIMARY KEY (id)
+);
+
+
+4. open terminal index.js 
+    node index.js -> to start
+
+5. open Game folder
+    npm start
+
+.then((res) => {
+            console.log(res);
+            navigate("/Start");
+          });
+
+
+just more notes:
+
+const onSubmit = (event) => {
+    event.preventDefault();
+    handleSubmit(text);
+    setText("");
+  };
+
+
+      {/* <ColumnTwo>
+      <h3>Press</h3>
+      <p>SHANGHAI, China, April 25, 2022 (GLOBE NEWSWIRE) -- CYOA Games — acclaimed Chinese developer of popular mobile games — announced today the launch of its new global game publishing brand, Zombie Apocalypse Games. The company’s mission is to bring the very best games to players all over the world.
+
+To date, CYOA Games has launched critically acclaimed titles such as Soul Hunters, Art of Conquest, AFK Arena, Rise of Kingdoms, and Warpath. Each of these games has explored new and exciting ways to bring CYOA Game unique brand of fun to players worldwide. The establishment of Zombie Apocalypse Games is the company’s next significant step in its ongoing mission.
+
+“The launch of Zombie Apocalypse Game represents a significant upgrade to our strategy of 'global localization’,” said Zombie Apocalypse Games Founder and CEO Kenny Wang. “We want to recruit top talent from around the world to provide more localized service to players around the world.”</p>
+    </ColumnTwo> */}
